@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6 模块化</title>
+  </head>
+  <body>
+      <pre>
+        19、模块化
+        概述：
+        模块化是指将一个大的程序文件，拆分成许多小的文件，然后将小文件组合起来；
+        
+        模块化的好处：
+        模块化的优势有以下几点：
+        1.	防止命名冲突；
+        2.	代码复用；
+        3.	高维护性；
+
+        babel操作步骤
+        1.初始化项目
+        npm init --yes
+        2.安装工具babel-cli（命令行工具） babel-preset-env（ES转换工具） browserify（打包工具， 项目中使用的是webpack）
+        npm i babel-cli babel-preset-env browserify -D
+        3.使用babel转换
+        npx babel src/js -d dist/js --presets=babel-preset-env
+        4.打包
+        npx browserify dist/js/app.js -o dist/bundle.js
+
+        npx babel src/js（js目录） -d dist/js（转化后的js目录） --presets=babel-preset-env
+        
+        
+      </pre>
+  </body>
+  <!-- <script src="./src/js/app.js" ty
+    pe="module"></script> -->
+
+  <!--引入打包转换后的js-->
+  <script src="dist/bundle.js"></script>
+
+</html>

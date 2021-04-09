@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise封装Ajax请求</title>
+  </head>
+  <body>
+    <pre>
+        13、Promise
+        概述：
+        Promise 是 ES6 引入的异步编程的新解决方案。语法上 Promise 是一个构造函数，用来封装异步操作并可以获取其成功或失败的结果；
+        1.	Promise 构造函数: Promise (excutor) {}；
+        2.	Promise.prototype.then 方法；
+        3.	Promise.prototype.catch 方法；
+        
+        基本使用：  
+        // 请求地址：https://api.apiopen.top/getJoke
+        // 原生请求
+        // 1、创建对象
+        const xhr = new XMLHttpRequest();
+    
+        // 2、初始化
+        xhr.open("GET", "https://api.apiopen.top/getJoke");
+    
+        // 3、发送
+        xhr.send();
+    
+        // 4、绑定事件，处理响应结果
+        xhr.onreadystatechange = function () {
+          // 判断状态
+          if (xhr.readyState == 4) {
+            // 判 断 响 应 状 态 码 200-299
+            if (xhr.status >= 200 && xhr.status <= 299) {
+              // 成功
+              console.log(xhr.response);
+            } else {
+              // 失败
+              console.error(xhr.status);
+            }
+          }
+        };   
+    </pre>
+  </body>
+  <script>
+    // 请求地址：https://api.apiopen.top/getJoke
+    // 原生请求
+    // 1、创建对象
+    const xhr = new XMLHttpRequest();
+
+    // 2、初始化
+    xhr.open("GET", "https://api.apiopen.top/getJoke");
+
+    // 3、发送
+    xhr.send();
+
+    // 4、绑定事件，处理响应结果
+    xhr.onreadystatechange = function () {
+      // 判断状态
+      if (xhr.readyState == 4) {
+        // 判 断 响 应 状 态 码 200-299
+        if (xhr.status >= 200 && xhr.status <= 299) {
+          // 成功
+          console.log(xhr.response);
+        } else {
+          // 失败
+          console.error(xhr.status);
+        }
+      }
+    };
+  </script>
+</html>

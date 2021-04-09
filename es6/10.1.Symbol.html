@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Symbol</title>
+  </head>
+  <body>
+    <pre>
+Symbol 概述：
+ES6 引入了一种新的原始数据类型 Symbol，表示独一无二的值。它是JavaScript 语言的第七种数据类型，是一种类似于字符串的数据类型；
+参考文章：https://blog.csdn.net/fesfsefgs/article/details/108354248
+
+Symbol 特点：
+1.	Symbol 的值是唯一的，用来解决命名冲突的问题；
+2.	Symbol 值不能与其他数据进行运算；
+3.	Symbol 定义的对象属性不能使用for…in循环遍历 ，但是可以使用Reflect.ownKeys 来获取对象的所有键名；
+
+基本使用：
+    //创建Symbol
+    let s = Symbol();
+    // console.log(s, typeof s); 
+    let s2 = Symbol('lonfc');
+
+    let s3 = Symbol(" long f c ");
+    console.log(s2 == s3); // false
+
+    //Symbol.for 创建
+    let s4 = Symbol.for("lonfc");
+    let s5 = Symbol.for("lonfc");
+    console.log(s4 == s5); // true
+    
+    //不能与其他数据进行运算
+    //    let result = s + 100;
+    //    let result = s > 100;
+    // let result = s + s;
+
+    // USONB you are so niubility
+    // u undefined
+    // s string symbol
+    // o object
+    // n null number
+    // b boolean
+
+    </pre>
+  </body>
+  <script>
+    //创建Symbol
+    let s = Symbol();
+    // console.log(s, typeof s); 
+    let s2 = Symbol('lonfc');
+
+    let s3 = Symbol(" long f c ");
+    console.log(s2 == s3); // false
+
+    //Symbol.for 创建
+    let s4 = Symbol.for("lonfc");
+    let s5 = Symbol.for("lonfc");
+    console.log(s4 == s5); // true
+
+    //不能与其他数据进行运算
+    //    let result = s + 100;
+    //    let result = s > 100;
+    // let result = s + s;
+
+    // USONB you are so niubility
+    // u undefined
+    // s string symbol
+    // o object
+    // n null number
+    // b boolean
+
+  </script>
+</html>

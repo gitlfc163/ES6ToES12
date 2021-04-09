@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>扩展运算符</title>
+  </head>
+  <body>
+    <pre>
+    9、扩展运算符
+    介绍：
+    ... 扩展运算符能将数组转换为逗号分隔的参数序列；
+    扩展运算符（spread）也是三个点（...）。它好比 rest 参数的逆运算，将一个数组转为用逗号分隔的参数序列，对数组进行解包；
+
+    基本使用：
+
+    </pre>
+  </body>
+  <script>
+    // ... 扩展运算符能将数组转换为逗号分隔的参数序列
+    //声明一个数组 ...
+    const tfboys = ["易烊千玺", "王源", "王俊凯"];
+    // => '易烊千玺','王源','王俊凯'
+    // 声明一个函数
+    function chunwan() {
+      console.log(arguments);
+    }
+    chunwan(...tfboys); // chunwan('易烊千玺','王源','王俊凯')
+  </script>
+</html>

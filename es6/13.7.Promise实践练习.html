@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise实践练习</title>
+  </head>
+  <body>
+    <pre>
+        13、Promise
+        概述：
+        Promise 是 ES6 引入的异步编程的新解决方案。语法上 Promise 是一个构造函数，用来封装异步操作并可以获取其成功或失败的结果；
+        1.	Promise 构造函数: Promise (excutor) {}；
+        2.	Promise.prototype.then 方法；
+        3.	Promise.prototype.catch 方法；
+        
+       
+    </pre>
+  </body>
+  <script>
+    /* 
+    //一.“回调地狱”方式写法：
+    // 1、引入 fs 模块
+    const fs = require("fs");
+    // 2、调用方法，读取文件
+    fs.readFile("resources/text.txt", (err, data1) => {
+      fs.readFile("resources/test1.txt", (err, data2) => {
+        fs.readFile("resources/test2.txt", (err, data3) => {
+          let result = data1 + data2 + data3;
+          console.log(result);
+        });
+      });
+    });
+    */ 
+   
+    //二.Promise实现：
+
+    // 1、引入 fs 模块
+    const fs = require("fs");
+
+    // 2、调用方法，读取文件
+    // fs.readFile("resources/text.txt",(err,data1)=>{
+    //	fs.readFile("resources/test1.txt",(err,data2)=>{
+    //	fs.readFile("resources/test2.txt",(err,data3)=>{
+    //	let result = data1 + data2 + data3;
+    //	console.log(result);
+    //	});
+    //	});
+    // });
+
+    // 3、使用Promise实现
+    const p = new Promise((resolve, reject) => {
+      fs.readFile("resources/text.txt", (err, data) => {
+        resolve(data);
+      });
+    });
+
+    p.then((value) => {
+      return new Promise((resolve, reject) => {
+        fs.readFile("resources/test1.txt", (err, data) => {
+          resolve([value, data]);
+        });
+      });
+    })
+      .then((value) => {
+        return new Promise((resolve, reject) => {
+          fs.readFile("resources/test2.txt", (err, data) => {
+            // 存入数组
+            value.push(data);
+            resolve(value);
+          });
+        });
+      })
+      .then((value) => {
+        console.log(value.join("\r\n"));
+      });
+  </script>
+</html>

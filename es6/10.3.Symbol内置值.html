@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Symbol内置值</title>
+  </head>
+  <body>
+    <pre>
+        概述：
+        除了定义自己使用的 Symbol 值以外，ES6 还提供了 11 个内置的 Symbol 值，指向语言内部使用的方法。可以称这些方法为魔术方法，因为它们会在特定的场景下自动执行；
+        
+        方法：
+
+        特别的： Symbol内置值的使用，都是作为某个对象类型的属性去使用；
+        
+        演示：
+        
+    </pre>
+  </body>
+  <script>
+    class Person {
+      static [Symbol.hasInstance](param) {
+        console.log(param);
+        console.log("我被用来检测类型了");
+        return false;
+      }
+    }
+
+    let o = {};
+
+    console.log(o instanceof Person);
+
+    const arr = [1, 2, 3];
+    const arr2 = [4, 5, 6];
+    // 合并数组：false数组不可展开，true可展开
+    arr2[Symbol.isConcatSpreadable] = false;
+    console.log(arr.concat(arr2));
+    
+  </script>
+</html>

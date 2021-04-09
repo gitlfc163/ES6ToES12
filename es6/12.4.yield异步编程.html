@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>生成器函数的参数传递</title>
+  </head>
+  <body>
+    <pre>
+12、生成器
+    概述：
+    生成器函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同；
+
+    基本使用：
+    // 模拟获取: 用户数据 订单数据 商品数据
+    function getUsers() {
+      setTimeout(() => {
+        let data = "用户数据";
+        // 第二次调用next，传入参数，作为第一个的返回值
+        iterator.next(data); // 这里将data传入
+      }, 1000);
+    }
+    function getOrders() {
+      setTimeout(() => {
+        let data = "订单数据";
+        iterator.next(data); // 这里将data传入
+      }, 1000);
+    }
+    function getGoods() {
+      setTimeout(() => {
+        let data = "商品数据";
+        iterator.next(data); // 这里将data传入
+      }, 1000);
+    }
+
+    function* gen() {
+      let users = yield getUsers();
+      console.log(users);
+      let orders = yield getOrders();
+      console.log(orders);
+      let goods = yield getGoods();
+      console.log(goods); // 这种操作有点秀啊！
+    }
+    let iterator = gen();
+    iterator.next();
+    
+    </pre>
+  </body>
+  <script>
+    // 模拟获取: 用户数据 订单数据 商品数据
+    function getUsers() {
+      setTimeout(() => {
+        let data = "用户数据";
+        // 第二次调用next，传入参数，作为第一个的返回值
+        iterator.next(data); // 这里将data传入
+      }, 1000);
+    }
+    function getOrders() {
+      setTimeout(() => {
+        let data = "订单数据";
+        iterator.next(data); // 这里将data传入
+      }, 1000);
+    }
+    function getGoods() {
+      setTimeout(() => {
+        let data = "商品数据";
+        iterator.next(data); // 这里将data传入
+      }, 1000);
+    }
+
+    function* gen() {
+      let users = yield getUsers();
+      console.log(users);
+      let orders = yield getOrders();
+      console.log(orders);
+      let goods = yield getGoods();
+      console.log(goods); // 这种操作有点秀啊！
+    }
+    let iterator = gen();
+    iterator.next();
+
+  </script>
+</html>

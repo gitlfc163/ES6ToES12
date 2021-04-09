@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <pre>
+        4、模板字符串
+        概述：
+        模板字符串（template string）是增强版的字符串，用反引号（`）标识，特点：
+        字符串中可以出现换行符；
+        可以使用 ${xxx} 形式引用变量；
+
+        应用场景：
+        当遇到字符串与变量拼接的情况使用模板字符串；
+
+        
+        代码演示及相关说明：
+
+        // 声明字符串的方法：单引号（''）、双引号（""）、反引号（``）
+        // 声明
+        let string = `我也一个字符串哦！`;
+        console.log(string);
+
+        // 特性
+        // 1、字符串中可以出现换行符
+   <xmp>
+       let str =
+        `<ul>
+        <li>大哥</li>
+        <li>二哥</li>
+        <li>三哥</li>
+        <li>四哥</li>
+        </ul>`;
+        console.log(str);
+   </xmp>
+
+        // 2、可以使用 ${xxx} 形式引用变量
+        let s = "大哥";
+        let out = `${s}是我最大的榜样！`;
+        console.log(out);
+        
+      </pre>
+  </body>
+
+  <script>
+    // 声明字符串的方法：单引号（''）、双引号（""）、反引号（``）
+    // 声明
+    let string = `我也一个字符串哦！`;
+    console.log(string);
+
+    // 特性
+    // 1、字符串中可以出现换行符
+    let str = `<ul>
+      <li>大哥</li>
+      <li>二哥</li>
+      <li>三哥</li>
+      <li>四哥</li>
+      </ul>`;
+    console.log(str);
+
+    // 2、可以使用 ${xxx} 形式引用变量
+    let s = "大哥";
+    let out = `${s}是我最大的榜样！`;
+    console.log(out);
+  </script>
+</html>

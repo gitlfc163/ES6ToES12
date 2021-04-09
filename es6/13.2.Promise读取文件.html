@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise封装读取文件</title>
+  </head>
+  <body>
+    <pre>
+        13、Promise
+        概述：
+        Promise 是 ES6 引入的异步编程的新解决方案。语法上 Promise 是一个构造函数，用来封装异步操作并可以获取其成功或失败的结果；
+        1.	Promise 构造函数: Promise (excutor) {}；
+        2.	Promise.prototype.then 方法；
+        3.	Promise.prototype.catch 方法；
+        
+        基本使用：
+        // 1、引入 fs 模块
+        const fs = require("fs");
+    
+        // 2、调用方法，读取文件
+        fs.readFile("resources/text.txt", (err, data) => {
+          // 如果失败则抛出错误
+          if (err) throw err;
+          // 如果没有出错，则输出内容
+          console.log(data.toString());
+        });       
+    </pre>
+  </body>
+  <script>
+    // 1、引入 fs 模块
+    const fs = require("fs");
+
+    // 2、调用方法，读取文件
+    fs.readFile("resources/text.txt", (err, data) => {
+      // 如果失败则抛出错误
+      if (err) throw err;
+      // 如果没有出错，则输出内容
+      console.log(data.toString());
+    });
+  </script>
+</html>

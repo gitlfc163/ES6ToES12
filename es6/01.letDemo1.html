@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>let案例：点击div更改颜色</title>
+    <link
+      crossorigin="anonymous" href="https://cdn.bootcss.com/twitter- bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <style>
+      .item {
+        width: 100px;
+        height: 50px;
+        border: solid 1px rgb(42, 156, 156);
+        float: left;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2 class="page-header">let案例：点击div更改颜色</h2>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+    <script>
+      // 获取div元素对象
+      let items = document.getElementsByClassName("item");
+
+      // 遍历并绑定事件
+      for (let i = 0; i < items.length; i++) {
+        items[i].onclick = function () {
+          // 修改当前元素的背景颜色
+          // this.style.background = 'pink'; // 写法一：常规写法一般无异常
+          items[i].style.background = "pink"; // 写法二
+          // 写法二：需要注意的是for循环内的i必须使用let声明
+          // 如果使用var就会报错，因为var是全局变量，
+          // 经过循环之后i的值会变成3，items[i]就会下标越界
+          // let是局部变量
+          // 我们要明白的是当我们点击的时候，这个i是哪个值
+          // 使用var相当于是：
+          // { var i = 0; }
+          // { var i = 1; }
+          // { var i = 2; }
+          // { var i = 3; }
+          // 下面的声明会将上面的覆盖掉，所以点击事件每次找到的都是3
+          // 而使用let相当于是：
+          // { let i = 0; }
+          // { let i = 1; }
+          // { let i = 2; }
+          // { let i = 3; }
+          // 由于let声明的是局部变量，每一个保持着原来的值
+          // 点击事件调用的时候拿到的是对应的i
+        };
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+        特性：
+        const 关键字用来声明常量，const 声明有以下特点：
+        1.	声明必须赋初始值；
+        2.	标识符一般为大写（习惯）；
+        3.	不允许重复声明；
+        4.	值不允许修改；
+        5.	块儿级作用域（局部变量）；
+
+        // 1. 声明必须赋初始值；
+        //const CAT;
+  
+        // 2. 标识符一般为大写（习惯）；
+        // const dog = "旺财"; // 小写也不错
+  
+        // 3. 不允许重复声明；
+        //const CAT = "喵喵";
+        //const CAT = "喵喵";
+  
+        // 4. 值不允许修改；
+        //const CAT = "喵喵";
+        //CAT = "咪咪";
+  
+        // 5. 块儿级作用域（局部变量）；
+        {
+          const CAT = "喵喵";
+          console.log(CAT);
+        }
+        console.log(CAT);
+
+    </pre>
+  </body>
+  
+  <script>
+    // 1. 声明必须赋初始值；
+    //const CAT;
+
+    // 2. 标识符一般为大写（习惯）；
+    // const dog = "旺财"; // 小写也不错
+
+    // 3. 不允许重复声明；
+    //const CAT = "喵喵";
+    //const CAT = "喵喵";
+
+    // 4. 值不允许修改；
+    //const CAT = "喵喵";
+    //CAT = "咪咪";
+
+    // 5. 块儿级作用域（局部变量）；
+   {
+      const CAT = "喵喵";
+      console.log(CAT);
+    }
+    console.log(CAT); 
+
+  </script>
+</html>

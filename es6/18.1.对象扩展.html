@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>对象扩展</title>
+  </head>
+  <body>
+    <pre>
+        18、对象扩展
+        概述：
+        ES6 新增了一些 Object 对象的方法：
+        1.	Object.is 比较两个值是否严格相等，与『===』行为基本一致（+0 与 NaN）；
+        2.	Object.assign 对象的合并，将源对象的所有可枚举属性，复制到目标对象；
+        3.	proto、setPrototypeOf、 setPrototypeOf 可以直接设置对象的原型；
+         
+        代码实现及相关说明：
+        代码实现：
+        
+    </pre>
+  </body>
+  <script>
+    // 对象扩展
+
+    // 1. Object.is 比较两个值是否严格相等，与『===』行为基本一致（+0 与 NaN）；
+    console.log(Object.is(120, 120)); // ===
+    // 注意下面的区别
+    console.log(Object.is(NaN, NaN));
+    console.log(NaN === NaN);
+    // NaN与任何数值做===比较都是false，跟他自己也如此！
+
+    // 2. Object.assign 对象的合并，将源对象的所有可枚举属性，复制到目标对象；
+    const config1 = {
+      host: "localhost",
+      port: 3306,
+      name: "root",
+      pass: "root",
+      test: "test", // 唯一存在
+    };
+
+    const config2 = {
+      host: "http://zibo.com",
+      port: 300300600,
+      name: "root4444",
+      pass: "root4444",
+      test2: "test2",
+    };
+    // 如果前边有后边没有会添加，如果前后都有，后面的会覆盖前面的
+    console.log(Object.assign(config1, config2));
+
+    // 3. proto 、setPrototypeOf、 getPrototypeOf 可以直接设置对象的原型；
+    const school = { name: "longfc" };
+    const cities = {
+      xiaoqu: ["北京", "上海", "深圳"],
+    };
+    // 并不建议这么做
+    Object.setPrototypeOf(school, cities);
+    console.log(Object.getPrototypeOf(school));
+    console.log(school);
+
+  </script>
+</html>

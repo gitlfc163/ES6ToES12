@@ -1,0 +1,9 @@
+    babel操作步骤
+        1.初始化项目
+        npm init --yes
+        2.安装工具babel-cli（命令行工具） babel-preset-env（ES转换工具） browserify（打包工具， 项目中使用的是webpack）
+        npm i babel-cli babel-preset-env browserify -D
+        3.使用babel转换
+        npx babel src/js -d dist/js --presets=babel-preset-env
+        4.打包
+        npx browserify dist/js/app.js -o dist/bundle.js
